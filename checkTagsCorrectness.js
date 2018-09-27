@@ -6,6 +6,7 @@ const checkTagsCorrectness = string => {
     //extract tags from string
     let tagArr = string.match(/(<\/?[A-Z]+>)/g);
     let current = 0;
+    //when cursor will reach last element it should stop
     while (current < tagArr.length - 1) {
         //check if first tag is closed
         if(!isOpenedTag(tagArr[current])) {
@@ -30,8 +31,9 @@ const checkTagsCorrectness = string => {
         current++;
     }
 
-    if(tagArr.length === 1) {
-        const tag = tagArr[0],
+
+    if(tagArr.length > 0) {
+        const tag = tagArr[tagArr.length-1],
             tagName = getTagName(tag);
         if(isOpenedTag(tag)) {
             return `Expected </${tagName}> found #`;

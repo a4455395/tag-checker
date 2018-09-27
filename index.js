@@ -8,7 +8,9 @@ const strings = [
     '<B>This should be in boldface, but there is an extra closing\n' +
     'tag</B></C>',
     '<B><C>This should be centred and in boldface, but there is\n' +
-    'a missing closing tag</C>'
+    'a missing closing tag</C>',
+    '<B><C>This sho<G>uld be centred and in boldface, but there is\\n\' +\n' +
+    ' a missing closing tag<C>'
 ];
 
 strings.forEach(s => console.log(checkTagsCorrectness(s)));

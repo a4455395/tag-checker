@@ -1,4 +1,4 @@
 # tag-checker
-Tag check problem test task
+Test task "Tag Checker Problem"
 
 run: node index.js
